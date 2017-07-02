@@ -1,0 +1,31 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}
+  </h1>
+  <div>
+    <div>
+      Username: 
+      <!--<input type="text" [value]="userName" (input)="userName=$event.target.value"/>-->
+      <input type="text" [ngModel]="userName" (ngModelChange)="userName=$event"/>
+      <span>{{userName}}</span>
+    </div>
+    <div>
+      Password:<input type="password" [(ngModel)]="password" />
+      <span>{{password}}</span>
+    </div>
+    <div>
+      <button>Submit</button>
+    </div>
+    <div>
+      
+    </div>
+    <!--<div *ngIf="password?.length > 0" [ngPlural]="password.length">
+        <ng-template ngPluralCase="=1">Password is weak</ng-template>
+        <ng-template ngPluralCase="=2">Password is not strong</ng-template>
+        <ng-template ngPluralCase="few">Password is strong</ng-template>
+        <ng-template ngPluralCase="many">Password is very strong</ng-template>
+    </div>-->
+  </div>
+</div>
+
