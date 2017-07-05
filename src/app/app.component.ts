@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	title = 'Corporate Management System';
+	user = {};
+
+	onLogin() {
+		console.log(this.user);
+	}
 }

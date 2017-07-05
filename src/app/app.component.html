@@ -1,31 +1,30 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}
-  </h1>
-  <div>
-    <div>
-      Username: 
-      <!--<input type="text" [value]="userName" (input)="userName=$event.target.value"/>-->
-      <input type="text" [ngModel]="userName" (ngModelChange)="userName=$event"/>
-      <span>{{userName}}</span>
+<!-- Sample: https://embed.plnkr.co/9luTng/ -->
+<div class="container">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div>
+        <h2>
+          Welcome to {{title}}
+        </h2>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="form-group">
+            <label>Username</label>
+            <!--<input type="text" [value]="userName" (input)="userName=$event.target.value"/>-->
+            <input class="form-control" type="text" [ngModel]="user.userName" (ngModelChange)="user.userName=$event"/>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input class="form-control" type="password" [(ngModel)]="user.password" />
+          </div>
+          <div class="form-group">
+            <button (click)="onLogin()" class="btn btn-primary">Login</button>
+            <a href="" (click)="onRegister()">Sign Up</a>
+          </div>
+          <div *ngIf="password?.length" class="form-group">
+            <span *ngIf="password.length > 1 && password.length <= 8">Password is weak</span>
+            <span *ngIf="password.length > 8 && password.length < 10">Password is strong</span>
+            <span *ngIf="password.length >= 10">Password is very strong</span> 
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      Password:<input type="password" [(ngModel)]="password" />
-      <span>{{password}}</span>
-    </div>
-    <div>
-      <button>Submit</button>
-    </div>
-    <div>
-      
-    </div>
-    <!--<div *ngIf="password?.length > 0" [ngPlural]="password.length">
-        <ng-template ngPluralCase="=1">Password is weak</ng-template>
-        <ng-template ngPluralCase="=2">Password is not strong</ng-template>
-        <ng-template ngPluralCase="few">Password is strong</ng-template>
-        <ng-template ngPluralCase="many">Password is very strong</ng-template>
-    </div>-->
-  </div>
 </div>
-
